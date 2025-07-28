@@ -1,0 +1,4 @@
+# project/requirements.txt
+Flask
+instagrapi
+pandas
