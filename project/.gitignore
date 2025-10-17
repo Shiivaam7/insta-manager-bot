@@ -1,4 +1,68 @@
+===================================================================
+
+Python / Flask Standard .gitignore
+
+===================================================================
+
+1. Virtual Environment
+
+Kabhi bhi virtual environment folder ko push nahi karna chahiye.
+
 venv/
-__pycache__/
+env/
+.venv/
+.env/
+
+2. Database Files
+
+Local database file ko hamesha ignore karein.
+
+instabot_data.db
+*.sqlite3
+
+3. Python Cache and Bytecode Files
+
+Yeh files automatically generate hoti hain.
+
+pycache/
 *.pyc
+*.pyo
+*.pyd
+
+4. IDE / Editor Specific Files
+
+Har developer alag editor use kar sakta hai.
+
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+5. OS Generated Files
+
+Windows, macOS, aur Linux ke system files.
+
+.DS_Store
+Thumbs.db
+
+6. Log Files
+
+Agar aap logging use karte hain to inhein ignore karein.
+
+*.log
+logs/
+
+7. Credentials & Environment Variables (Most Important)
+
+Password ya secret keys wali files ko kabhi push na karein.
+
+*.env
 .env
+credentials.py
+config.py
+
+8. Flask Specific Files
+
+Flask ka instance folder.
+
+instance/
