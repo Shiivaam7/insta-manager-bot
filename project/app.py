@@ -1,4 +1,4 @@
-# app.py (Final Integrated Version with Online Data Display)
+# app.py 
 
 from flask import Flask, render_template, request, flash, Response, redirect, url_for, session
 from instagrapi import Client
@@ -139,7 +139,7 @@ def run_automation():
     thread = threading.Thread(target=process_links_from_sql, args=(insta_username, insta_password))
     thread.start()
     
-    flash("✅ Automation task has started in the background. Check the console/terminal for progress. The page will show results once data is fetched.", "success")
+    flash(" Automation task has started in the background. Check the console/terminal for progress. The page will show results once data is fetched.", "success")
     return redirect(url_for('dashboard'))
 
 
@@ -155,12 +155,12 @@ def check_status():
         
         if check_type == 'follower':
             my_followers = cl.user_followers(cl.user_id)
-            if target_user_id in my_followers: flash(f"✅ Yes, <strong>{target_username}</strong> follows you.", "success")
-            else: flash(f"❌ No, <strong>{target_username}</strong> does not follow you.", "info")
+            if target_user_id in my_followers: flash(f" Yes, <strong>{target_username}</strong> follows you.", "success")
+            else: flash(f" No, <strong>{target_username}</strong> does not follow you.", "info")
         elif check_type == 'following':
             my_following = cl.user_following(cl.user_id)
-            if target_user_id in my_following: flash(f"✅ Yes, you follow <strong>{target_username}</strong>.", "success")
-            else: flash(f"❌ No, you do not follow <strong>{target_username}</strong>.", "info")
+            if target_user_id in my_following: flash(f" Yes, you follow <strong>{target_username}</strong>.", "success")
+            else: flash(f" No, you do not follow <strong>{target_username}</strong>.", "info")
     except Exception as e:
         flash(f"An error occurred: {e}", "danger")
     return redirect(url_for('dashboard'))
